@@ -142,6 +142,8 @@ THREE.TransformControls = function ( camera, domElement ) {
 		this.object = object;
 		this.visible = true;
 
+		return this;
+
 	};
 
 	// Detatch from object
@@ -150,6 +152,8 @@ THREE.TransformControls = function ( camera, domElement ) {
 		this.object = undefined;
 		this.visible = false;
 		this.axis = null;
+
+		return this;
 
 	};
 
@@ -206,15 +210,7 @@ THREE.TransformControls = function ( camera, domElement ) {
 		this.camera.updateMatrixWorld();
 		this.camera.matrixWorld.decompose( cameraPosition, cameraQuaternion, cameraScale );
 
-		if ( this.camera instanceof THREE.PerspectiveCamera ) {
-
-			eye.copy( cameraPosition ).sub( worldPosition ).normalize();
-
-		} else if ( this.camera instanceof THREE.OrthographicCamera ) {
-
-			eye.copy( cameraPosition ).normalize();
-
-		}
+		eye.copy( cameraPosition ).sub( worldPosition ).normalize();
 
 		THREE.Object3D.prototype.updateMatrixWorld.call( this );
 
@@ -594,7 +590,7 @@ THREE.TransformControls = function ( camera, domElement ) {
 
 	}
 
-	// TODO: depricate
+	// TODO: deprecate
 
 	this.getMode = function () {
 
@@ -634,7 +630,7 @@ THREE.TransformControls = function ( camera, domElement ) {
 
 	this.update = function () {
 
-		console.warn( 'THREE.TransformControls: update function has been depricated.' );
+		console.warn( 'THREE.TransformControls: update function has no more functionality and therefore has been deprecated.' );
 
 	};
 
@@ -788,20 +784,20 @@ THREE.TransformControlsGizmo = function () {
 			[ new THREE.Line( lineGeometry, matLineBlue ), null, [ 0, - Math.PI / 2, 0 ]]
 		],
 		XYZ: [
-			[ new THREE.Mesh( new THREE.OctahedronBufferGeometry( 0.1, 0 ), matWhiteTransperent ), [ 0, 0, 0 ], [ 0, 0, 0 ]]
+			[ new THREE.Mesh( new THREE.OctahedronBufferGeometry( 0.1, 0 ), matWhiteTransperent.clone() ), [ 0, 0, 0 ], [ 0, 0, 0 ]]
 		],
 		XY: [
-			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matYellowTransparent ), [ 0.15, 0.15, 0 ]],
+			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matYellowTransparent.clone() ), [ 0.15, 0.15, 0 ]],
 			[ new THREE.Line( lineGeometry, matLineYellow ), [ 0.18, 0.3, 0 ], null, [ 0.125, 1, 1 ]],
 			[ new THREE.Line( lineGeometry, matLineYellow ), [ 0.3, 0.18, 0 ], [ 0, 0, Math.PI / 2 ], [ 0.125, 1, 1 ]]
 		],
 		YZ: [
-			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matCyanTransparent ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]],
+			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matCyanTransparent.clone() ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]],
 			[ new THREE.Line( lineGeometry, matLineCyan ), [ 0, 0.18, 0.3 ], [ 0, 0, Math.PI / 2 ], [ 0.125, 1, 1 ]],
 			[ new THREE.Line( lineGeometry, matLineCyan ), [ 0, 0.3, 0.18 ], [ 0, - Math.PI / 2, 0 ], [ 0.125, 1, 1 ]]
 		],
 		XZ: [
-			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matMagentaTransparent ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]],
+			[ new THREE.Mesh( new THREE.PlaneBufferGeometry( 0.295, 0.295 ), matMagentaTransparent.clone() ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]],
 			[ new THREE.Line( lineGeometry, matLineMagenta ), [ 0.18, 0, 0.3 ], null, [ 0.125, 1, 1 ]],
 			[ new THREE.Line( lineGeometry, matLineMagenta ), [ 0.3, 0, 0.18 ], [ 0, - Math.PI / 2, 0 ], [ 0.125, 1, 1 ]]
 		]
