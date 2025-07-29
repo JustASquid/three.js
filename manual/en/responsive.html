@@ -6,15 +6,11 @@
     <meta name="twitter:site" content="@threejs">
     <meta name="twitter:title" content="Three.js – Responsive Design">
     <meta property="og:image" content="https://threejs.org/files/share.png">
-    <link rel="shortcut icon" href="/files/favicon_white.ico" media="(prefers-color-scheme: dark)">
-    <link rel="shortcut icon" href="/files/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="shortcut icon" href="../../files/favicon_white.ico" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="../../files/favicon.ico" media="(prefers-color-scheme: light)">
 
-    <link rel="stylesheet" href="/manual/resources/lesson.css">
-    <link rel="stylesheet" href="/manual/resources/lang.css">
-<!-- Import maps polyfill -->
-<!-- Remove this when import maps will be widely supported -->
-<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-
+    <link rel="stylesheet" href="../resources/lesson.css">
+    <link rel="stylesheet" href="../resources/lang.css">
 <script type="importmap">
 {
   "imports": {
@@ -145,7 +141,7 @@ is an interesting part of the canvas spec and it's best not to set the same
 size if it's already the size we want.</p>
 <p>Once we know if we need to resize or not we then call <code class="notranslate" translate="no">renderer.setSize</code> and
 pass in the new width and height. It's important to pass <code class="notranslate" translate="no">false</code> at the end.
-<code class="notranslate" translate="no">render.setSize</code> by default sets the canvas's CSS size but doing so is not
+<code class="notranslate" translate="no">renderer.setSize</code> by default sets the canvas's CSS size but doing so is not
 what we want. We want the browser to continue to work how it does for all other
 elements which is to use CSS to determine the display size of the element. We don't
 want canvases used by three to be different than other elements.</p>
@@ -232,8 +228,8 @@ you passed in. <strong>This is strongly NOT RECOMMENDED</strong>. See below</p>
 <pre class="prettyprint showlinemods notranslate lang-js" translate="no">    function resizeRendererToDisplaySize(renderer) {
       const canvas = renderer.domElement;
       const pixelRatio = window.devicePixelRatio;
-      const width  = canvas.clientWidth  * pixelRatio | 0;
-      const height = canvas.clientHeight * pixelRatio | 0;
+      const width  = Math.floor( canvas.clientWidth  * pixelRatio );
+      const height = Math.floor( canvas.clientHeight * pixelRatio );
       const needResize = canvas.width !== width || canvas.height !== height;
       if (needResize) {
         renderer.setSize(width, height, false);
@@ -267,9 +263,9 @@ notice the edges are more crisp.</p>
         </div>
       </div>
     </div>
-  
-  <script src="/manual/resources/prettify.js"></script>
-  <script src="/manual/resources/lesson.js"></script>
+
+  <script src="../resources/prettify.js"></script>
+  <script src="../resources/lesson.js"></script>
 
 
 

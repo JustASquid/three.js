@@ -97,7 +97,7 @@ var slice_slice = function(length) {
   return (function read() {
     return that._source.read().then(function(result) {
 
-      // When done, it’s possible the request wasn’t fully fullfilled!
+      // When done, it’s possible the request wasn’t fully fulfilled!
       // If so, the pre-allocated array is too big and needs slicing.
       if (result.done) {
         that._array = empty;
@@ -281,7 +281,7 @@ function ringContains(ring, point) {
     if (segmentContains(pi, pj, point)) {
       return 0;
     }
-    if (((yi > y) !== (yj > y)) && ((x < (xj - xi) * (y - yi) / (yj - yi) + xi))) {
+    if (((yi > y) !== (yj > y)) && (x < (xj - xi) * (y - yi) / (yj - yi) + xi)) {
       contains = -contains;
     }
   }

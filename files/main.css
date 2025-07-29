@@ -11,7 +11,8 @@
 	--font-size: 16px;
 	--line-height: 26px;
 
-	--border-style: 1px solid #E8E8E8;
+	--border-color: #E8E8E8;
+	--border-style: 1px solid var(--border-color);
 	--header-height: 48px;
 	--panel-width: 300px;
 	--panel-padding: 16px;
@@ -27,7 +28,8 @@
 		--text-color: #bbb;
 		--secondary-text-color: #666;
 
-		--border-style: 1px solid #444;
+		--border-color: #444;
+		--border-style: 1px solid var(--border-color);
 	}
 
 	#previewsToggler {
@@ -103,6 +105,13 @@ h1 a {
 	color: var(--color-blue);
 }
 
+hr {
+	border: 0;
+	height: 1px;
+	background-color: var(--border-color);
+	margin: 16px 0;
+}
+
 #header {
 	display: flex;
 	height: var(--header-height);
@@ -138,7 +147,7 @@ h1 a {
 	transition: 0s 0s height;
 }
 
-	#panel #exitSearchButton {
+	#panel #clearSearchButton {
 		width: 48px;
 		height: 48px;
 		display: none;
@@ -154,7 +163,7 @@ h1 a {
 		margin-right: 0px;
 	}
 
-	#panel.searchFocused #exitSearchButton {
+	#panel.searchFocused #clearSearchButton {
 		display: block;
 	}
 
@@ -534,6 +543,16 @@ iframe#viewer {
 	padding: 8px 12px 4px;
 	font-size: calc(var(--font-size) - 1px);
 	font-weight: 500;
+	line-height: calc(var(--line-height) - 6px);
+}
+
+.card .tag {
+	background-color: var(--background-color);
+	color: var(--color-blue);
+	margin-left: 6px;
+	padding: 1px 6px 2px;
+	border-radius: 2px;
+	font-size: calc(var(--font-size) - 2px);
 	line-height: calc(var(--line-height) - 6px);
 }
 

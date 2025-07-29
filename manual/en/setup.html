@@ -6,15 +6,11 @@
     <meta name="twitter:site" content="@threejs">
     <meta name="twitter:title" content="Three.js – Setup">
     <meta property="og:image" content="https://threejs.org/files/share.png">
-    <link rel="shortcut icon" href="/files/favicon_white.ico" media="(prefers-color-scheme: dark)">
-    <link rel="shortcut icon" href="/files/favicon.ico" media="(prefers-color-scheme: light)">
+    <link rel="shortcut icon" href="../../files/favicon_white.ico" media="(prefers-color-scheme: dark)">
+    <link rel="shortcut icon" href="../../files/favicon.ico" media="(prefers-color-scheme: light)">
 
-    <link rel="stylesheet" href="/manual/resources/lesson.css">
-    <link rel="stylesheet" href="/manual/resources/lang.css">
-<!-- Import maps polyfill -->
-<!-- Remove this when import maps will be widely supported -->
-<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
-
+    <link rel="stylesheet" href="../resources/lesson.css">
+    <link rel="stylesheet" href="../resources/lang.css">
 <script type="importmap">
 {
   "imports": {
@@ -34,7 +30,7 @@
 The first article was <a href="fundamentals.html">about three.js fundamentals</a>.
 If you haven't read that yet you might want to start there.</p>
 <p>Before we go any further we need to talk about setting up your
-computer to do development. In particular, for security reasons,
+computer as a development environment. In particular, for security reasons,
 WebGL cannot use images from your hard drive directly. That means
 in order to do development you need to use a web server. Fortunately
 development web servers are super easy to setup and use.</p>
@@ -42,7 +38,7 @@ development web servers are super easy to setup and use.</p>
 Once downloaded double click the zip file to unpack the files.</p>
 <p>Next download one of these simple web servers.</p>
 <p>If you'd prefer a web server with a user interface there's
-<a href="https://greggman.github.io/servez">Servez</a></p>
+<a href="https://greggman.github.io/servez" target="_blank">Servez</a>.</p>
 <p></p><div class="threejs_image border">
   <img class="" src="../resources/servez.gif">
 </div>
@@ -51,8 +47,8 @@ Once downloaded double click the zip file to unpack the files.</p>
 <p>Just point it at the folder where you unzipped the files, click "Start", then go to
 in your browser <a href="http://localhost:8080/"><code class="notranslate" translate="no">http://localhost:8080/</code></a> or if you'd
 like to browse the samples go to <a href="http://localhost:8080/threejs"><code class="notranslate" translate="no">http://localhost:8080/threejs</code></a>.</p>
-<p>To stop serving pick stop or quit Servez.</p>
-<p>If you prefer the command line (I do), another way is to use <a href="https://nodejs.org">node.js</a>.
+<p>To stop serving click stop or quit Servez.</p>
+<p>If you prefer the command line (I do), another way is to use <a href="https://nodejs.org" target="_blank">node.js</a>.
 Download it, install it, then open a command prompt / console / terminal window. If you're on Windows the installer will add a special "Node Command Prompt" so use that.</p>
 <p>Then install the <a href="https://github.com/greggman/servez-cli"><code class="notranslate" translate="no">servez</code></a> by typing</p>
 <pre class="prettyprint showlinemods notranslate notranslate" translate="no">npm -g install servez
@@ -72,15 +68,15 @@ servez
 <p>Then in your browser go to <a href="http://localhost:8080/"><code class="notranslate" translate="no">http://localhost:8080/</code></a>.</p>
 <p>If you don't specify a path then servez will serve the current folder.</p>
 <p>If either of those options are not to your liking
-<a href="https://stackoverflow.com/questions/12905426/what-is-a-faster-alternative-to-pythons-servez-or-simplehttpserver">there are many other simple servers to choose from</a>.</p>
+<a href="https://stackoverflow.com/questions/12905426/what-is-a-faster-alternative-to-pythons-servez-or-simplehttpserver" target="_blank">there are many other simple servers to choose from</a>.</p>
 <p>Now that you have a server setup we can move on to <a href="textures.html">textures</a>.</p>
 
         </div>
       </div>
     </div>
-  
-  <script src="/manual/resources/prettify.js"></script>
-  <script src="/manual/resources/lesson.js"></script>
+
+  <script src="../resources/prettify.js"></script>
+  <script src="../resources/lesson.js"></script>
 
 
 
